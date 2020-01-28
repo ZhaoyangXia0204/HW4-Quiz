@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz!</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="scores">
+      <a href="highscores.html">View Highscores</a>
+    </div>
+
+    <div class="time"></div>
+
+    <div class="wrapper">
+      <div id="start-screen" class="start">
+        <h1>Quiz! Challenge</h1>
+        <p>Let's do some quiz!</p>
+        <button id="start">Start Quiz</button>
+      </div>
+
+      <div id="questions" class="hide">
+        <p id="qqq"></p>
+        <!-- Display current question -->
+        <div id="choices" class="choices">
+          <button class = "choice1" id = "A"></button>
+          <button class = "choice2" id = "B"></button>
+          <button class = "choice3" id = "C"></button>
+          <button class = "choice4" id = "D"></button>
+          <textarea name="" id="answer" cols="30" rows="10" placeholder="enter answer here"></textarea>
+        </div>
+        
+      </div>
+      <div id="ansDisplay"></div>
+      
+      <div id="end-screen" class="hide">
+        <!-- End screen content -->
+        <!-- Display the final score -->
+        <p>
+          <!-- `input` field for the user initials -->
+          <input type = "submit" id="name"></input>
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+      
+
+      <!-- Message to flash "Correct" or "Incorrect" -->
+    </div>
+
+
+    <script src="./logic.js"></script>
+  </body>
+</html>
