@@ -8,7 +8,6 @@ var highscoresUsernam = JSON.parse(window.localStorage.getItem('scoreUser'));
 
 
 
-
 //highscores.push(highscore, username);
 
 
@@ -19,8 +18,11 @@ function printHighscores() {
   //highscores.push(highscore, username);
   var highscoresUsernam = JSON.parse(window.localStorage.getItem('scoreUser'));
   console.log(highscoresUsernam);
-
-  var allSs = JSON.stringify(highscoresUsernam);
+  var nameScore = highscoresUsernam.sort(function(a,b){
+    return a.Score - b.username
+  })
+  console.log(nameScore);
+  var allSs = JSON.stringify(nameScore);
 
   console.log(allSs);
   
@@ -34,26 +36,12 @@ function printHighscores() {
     
     highscoreList.appendChild(li);
   
-  //
-    /*
-      @TODO: write your function code here
-    */
+
     
   }
 
 
- 
-  
-  /**
-   * Function to clear high scores
-   * 
-   * @description
-   * This function will:
-   *  - [ ] Clear all the high scores
-   *  - [x] Reload the window
-   * 
-   * @see https://www.w3schools.com/jsref/prop_win_localstorage.asp
-   */
+
   function clearHighscores() {
  
     localStorage.clear();
