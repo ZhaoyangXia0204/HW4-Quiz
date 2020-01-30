@@ -1,24 +1,48 @@
-/**
- * Function to print high scores
- * 
- * @description
- * This function will:
- *  - [ ] Retrieve the high scores
- *  - [ ] Display high scores in descending order
- * 
- * @see https://www.w3schools.com/jsref/prop_win_localstorage.asp
- * @see https://www.w3schools.com/jsref/jsref_sort.asp
- * @see https://www.w3schools.com/jsref/met_node_appendchild.asp
- * @see https://www.w3schools.com/jsref/met_document_createelement.asp
- */
+
+var highscoreList = document.getElementById("highscores");
+var highscoresUsernam = JSON.parse(window.localStorage.getItem('scoreUser'));
+//var Hs = JSON.stringify(highscoresUsernam);
+
+
+
+
+
+
+
+//highscores.push(highscore, username);
+
+
+
 function printHighscores() {
+  //var highscores = [];
+  //highscoreList.innerHTML = "";
+  //highscores.push(highscore, username);
+  var highscoresUsernam = JSON.parse(window.localStorage.getItem('scoreUser'));
+  console.log(highscoresUsernam);
+
+  var allSs = JSON.stringify(highscoresUsernam);
+
+  console.log(allSs);
   
+  
+
+
+    var li = document.createElement("li");
+
+    li.textContent = allSs;
+    
+    
+    highscoreList.appendChild(li);
+  
+  //
     /*
       @TODO: write your function code here
     */
     
   }
-  
+
+
+ 
   
   /**
    * Function to clear high scores
@@ -31,13 +55,15 @@ function printHighscores() {
    * @see https://www.w3schools.com/jsref/prop_win_localstorage.asp
    */
   function clearHighscores() {
-  
+ 
+    localStorage.clear();
+    document.getElementById("highscores").innerHTML = "";
     /*
       @TODO: write the rest of your function code here
     */
   
     // reload window
-    window.location.reload();
+    //window.location.reload();
   
   }
   
